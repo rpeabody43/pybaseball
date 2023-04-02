@@ -1,4 +1,5 @@
 # pybaseball
+(Forked for use with AWS Lambda)
 
 Baseball data scraping and analysis tools in python
 
