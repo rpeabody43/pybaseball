@@ -1,6 +1,6 @@
 import pandas as pd
 
-from . import cache
+# from . import cache
 from .datasources.bref import BRefSession
 
 session = BRefSession()
@@ -16,7 +16,7 @@ def get_draft_results(year: int, draft_round: int) -> pd.DataFrame:
     return draft_results
 
 
-@cache.df_cache()
+# @cache.df_cache
 def amateur_draft(year: int, draft_round: int, keep_stats: bool = True) -> pd.DataFrame:
     """
     Retrieves the MLB amateur draft results by year and round.

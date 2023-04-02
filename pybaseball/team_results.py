@@ -7,7 +7,7 @@ import pandas as pd
 
 from pybaseball.utils import get_first_season, most_recent_season
 
-from . import cache
+# from . import cache
 from .datasources.bref import BRefSession
 
 session = BRefSession()
@@ -101,7 +101,7 @@ def make_numeric(data: pd.DataFrame) -> pd.DataFrame:
     data[num_cols] = data[num_cols].astype(float) #not int because of NaNs
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def schedule_and_record(season: int, team: str) -> pd.DataFrame:
     """ 
     Retrieve a team's game-level results for a given season, including win/loss/tie result, score, attendance, 

@@ -3,7 +3,7 @@ from typing import List, Optional
 import pandas as pd
 from bs4 import BeautifulSoup, Comment, PageElement, ResultSet
 
-from . import cache
+# from . import cache
 from .utils import most_recent_season
 from .datasources.bref import BRefSession
 
@@ -74,7 +74,7 @@ def get_tables(soup: BeautifulSoup, season: int) -> List[pd.DataFrame]:
     return datasets #returns a list of dataframes
 
 
-@cache.df_cache()
+# @cache.df_cache
 def standings(season:Optional[int] = None) -> pd.DataFrame:
     """
     Returns a pandas DataFrame of the standings for a given MLB season, or the most recent standings

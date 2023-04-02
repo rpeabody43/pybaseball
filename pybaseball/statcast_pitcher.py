@@ -5,7 +5,7 @@ import warnings
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 from .utils import norm_pitch_code, sanitize_input, split_request, sanitize_statcast_columns
 
 
@@ -31,7 +31,7 @@ def statcast_pitcher(start_dt: Optional[str] = None, end_dt: Optional[str] = Non
 
     return df
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_exitvelo_barrels(year: int, minBBE: Union[int, str] = "q") -> pd.DataFrame:
     """
     Retrieves batted ball against data for all qualified pitchers in a given year.
@@ -48,7 +48,7 @@ def statcast_pitcher_exitvelo_barrels(year: int, minBBE: Union[int, str] = "q") 
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_expected_stats(year: int, minPA: Union[int, str] = "q") -> pd.DataFrame:
     """
     Retrieves expected stats based on quality of batted ball contact against in a given year.
@@ -64,7 +64,7 @@ def statcast_pitcher_expected_stats(year: int, minPA: Union[int, str] = "q") -> 
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_pitch_arsenal(year: int, minP: int = 250, arsenal_type: str = "avg_speed") -> pd.DataFrame:
     """
     Retrieves high level stats on each pitcher's arsenal in a given year.
@@ -86,7 +86,7 @@ def statcast_pitcher_pitch_arsenal(year: int, minP: int = 250, arsenal_type: str
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_arsenal_stats(year: int, minPA: int = 25) -> pd.DataFrame:
     """
     Retrieves assorted basic and advanced outcome stats for pitchers' arsenals in a given year. Run value and 
@@ -104,7 +104,7 @@ def statcast_pitcher_arsenal_stats(year: int, minPA: int = 25) -> pd.DataFrame:
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_pitch_movement(year: int, minP: Union[int, str] = "q", pitch_type: str = "FF") -> pd.DataFrame:
     """
     Retrieves pitch movement stats for all qualified pitchers with a specified pitch type for a given year.
@@ -123,7 +123,7 @@ def statcast_pitcher_pitch_movement(year: int, minP: Union[int, str] = "q", pitc
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_active_spin(year: int, minP: int = 250, _type: str = 'spin-based') -> pd.DataFrame:
     """
     Retrieves active spin stats on all of a pitchers' pitches in a given year.
@@ -162,7 +162,7 @@ def statcast_pitcher_active_spin(year: int, minP: int = 250, _type: str = 'spin-
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_percentile_ranks(year: int) -> pd.DataFrame:
     """
     Retrieves percentile ranks for each player in a given year, including batters with 2.1 PA per team game and 1.25 
@@ -177,7 +177,7 @@ def statcast_pitcher_percentile_ranks(year: int) -> pd.DataFrame:
     # URL returns a null player with player id 999999, which we want to drop
     return data.loc[data.player_name.notna()].reset_index(drop=True)
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_pitcher_spin_dir_comp(year: int, pitch_a: str = "FF", pitch_b: str = "CH", minP: int = 100, pitcher_pov: bool = True) -> pd.DataFrame:
     """
     Retrieves spin comparisons between two pitches for qualifying pitchers in a given year.

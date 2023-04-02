@@ -1,12 +1,12 @@
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 
 from pybaseball import teamid_lookup
 
 
-@cache.df_cache()
+# @cache.df_cache
 def top_prospects(teamName=None, playerType=None):
     """
     Retrieves the top prospects by team or leaguewide. It can return top prospect pitchers, batters, or both.

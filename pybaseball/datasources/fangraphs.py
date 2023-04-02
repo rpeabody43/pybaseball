@@ -4,7 +4,7 @@ from typing import Any, List, Optional, Union
 import lxml
 import pandas as pd
 
-from .. import cache
+# from .. import cache
 from ..datahelpers.column_mapper import BattingStatsColumnMapper, ColumnListMapperFunction, GenericColumnMapper
 from ..enums.fangraphs import (FangraphsBattingStats, FangraphsFieldingStats, FangraphsLeague, FangraphsMonth,
                                FangraphsPitchingStats, FangraphsPositions, FangraphsStatColumn, FangraphsStatsCategory,
@@ -171,7 +171,7 @@ class FangraphsBattingStatsTable(FangraphsDataTable):
     ROW_ID_FUNC: RowIdFunction = player_row_id_func
     ROW_ID_NAME = 'IDfg'
 
-    @cache.df_cache()
+    # @cache.df_cache
     def fetch(self, *args, **kwargs):
         return super().fetch(*args, **kwargs)
 
@@ -185,7 +185,7 @@ class FangraphsFieldingStatsTable(FangraphsDataTable):
     ROW_ID_FUNC: RowIdFunction = player_row_id_func
     ROW_ID_NAME = 'IDfg'
 
-    @cache.df_cache()
+    # @cache.df_cache
     def fetch(self, *args, **kwargs):
         return super().fetch(*args, **kwargs)
 
@@ -198,7 +198,7 @@ class FangraphsPitchingStatsTable(FangraphsDataTable):
     ROW_ID_FUNC: RowIdFunction = player_row_id_func
     ROW_ID_NAME = 'IDfg'
 
-    @cache.df_cache()
+    # @cache.df_cache
     def fetch(self, *args, **kwargs):
         return super().fetch(*args, **kwargs)
 

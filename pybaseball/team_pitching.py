@@ -3,7 +3,7 @@ from typing import List, Optional
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from . import cache
+# from . import cache
 from .datasources.fangraphs import fg_team_pitching_data
 from .datasources.bref import BRefSession
 
@@ -13,7 +13,7 @@ session = BRefSession()
 team_pitching = fg_team_pitching_data 
 
 
-@cache.df_cache()
+# @cache.df_cache
 def team_pitching_bref(team: str, start_season: int, end_season: Optional[int]=None) -> pd.DataFrame:
     """
     Get season-level Pitching Statistics for Specific Team (from Baseball-Reference)

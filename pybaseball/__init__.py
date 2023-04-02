@@ -92,8 +92,8 @@ from .retrosheet import park_codes
 from .retrosheet import rosters
 from .retrosheet import events
 from .team_game_logs import team_game_logs
-from .plotting import plot_stadium
-from .plotting import spraychart
+# from .plotting import plot_stadium
+# from .plotting import spraychart
 from .datasources.fangraphs import (fg_batting_data, fg_pitching_data, fg_team_batting_data, fg_team_fielding_data,
                                     fg_team_pitching_data)
 from .split_stats import get_splits

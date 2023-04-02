@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from . import cache
+# from . import cache
 from .utils import most_recent_season, sanitize_date_range
 from .datasources.bref import BRefSession
 
@@ -46,7 +46,7 @@ def get_table(soup: BeautifulSoup) -> pd.DataFrame:
     return data
 
 
-@cache.df_cache()
+# @cache.df_cache
 def pitching_stats_range(start_dt: Optional[str]=None, end_dt: Optional[str]=None) -> pd.DataFrame:
     """
     Get all pitching stats for a set time range. This can be the past week, the

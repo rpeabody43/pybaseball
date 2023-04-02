@@ -4,7 +4,7 @@ from typing import Optional, Union
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 from .utils import sanitize_input, split_request, sanitize_statcast_columns
 
 
@@ -29,7 +29,7 @@ def statcast_batter(start_dt: Optional[str] = None, end_dt: Optional[str] = None
     df = split_request(start_dt, end_dt, player_id, url)
     return df
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_batter_exitvelo_barrels(year: int, minBBE: Union[int, str] = "q") -> pd.DataFrame:
     """
     Retrieves batted ball data for all batters in a given year.
@@ -46,7 +46,7 @@ def statcast_batter_exitvelo_barrels(year: int, minBBE: Union[int, str] = "q") -
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_batter_expected_stats(year: int, minPA: Union[int, str] = "q") -> pd.DataFrame:
     """
     Retrieves expected stats based on quality of batted ball contact in a given year.
@@ -62,7 +62,7 @@ def statcast_batter_expected_stats(year: int, minPA: Union[int, str] = "q") -> p
     data = sanitize_statcast_columns(data)
     return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_batter_percentile_ranks(year: int) -> pd.DataFrame:
     """
     Retrieves percentile ranks for each player in a given year, including batters with at least 2.1 PA per team 
@@ -77,7 +77,7 @@ def statcast_batter_percentile_ranks(year: int) -> pd.DataFrame:
     # URL returns a null player with player id 999999, which we want to drop
     return data.loc[data.player_name.notna()].reset_index(drop=True)
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_batter_pitch_arsenal(year: int, minPA: int = 25) -> pd.DataFrame:
     """
     Retrieves outcome data for batters split by the pitch type in a given year.

@@ -6,7 +6,7 @@ from zipfile import ZipFile
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 
 url = "https://github.com/chadwickbureau/baseballdatabank/archive/master.zip"
 base_string = "baseballdatabank-master"

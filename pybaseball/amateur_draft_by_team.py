@@ -1,6 +1,6 @@
 import pandas as pd
 
-from . import cache
+# from . import cache
 from .datasources.bref import BRefSession
 
 session = BRefSession()
@@ -39,7 +39,7 @@ def drop_stats(draft_results: pd.DataFrame) -> pd.DataFrame:
     return draft_results
 
 
-@cache.df_cache()
+# @cache.df_cache
 def amateur_draft_by_team(
     team: str, year: int, keep_stats: bool = True
 ) -> pd.DataFrame:

@@ -1,7 +1,7 @@
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from . import cache
+# from . import cache
 from .datasources.bref import BRefSession
 
 session = BRefSession()
@@ -38,7 +38,7 @@ def postprocess(data: pd.DataFrame) -> pd.DataFrame:
     return data.reset_index(drop=True)
 
 
-@cache.df_cache()
+# @cache.df_cache
 def team_game_logs(season: int, team: str, log_type: str="batting") -> pd.DataFrame:
     """
     Get Baseball Reference batting or pitching game logs for a team-season.

@@ -4,10 +4,10 @@ from typing import Union
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 from .utils import norm_positions, sanitize_statcast_columns
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_outs_above_average(year: int, pos: Union[int, str], min_att: Union[int, str] = "q", view: str = "Fielder") -> pd.DataFrame:
 	"""Scrapes outs above average from baseball savant for a given year and position
 
@@ -36,7 +36,7 @@ def statcast_outs_above_average(year: int, pos: Union[int, str], min_att: Union[
 	data = sanitize_statcast_columns(data)
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_outfield_directional_oaa(year: int, min_opp: Union[int, str] = "q") -> pd.DataFrame:
 	"""
 	Retrieves outfielders' directional OAA data for the given year and number of opportunities. The directions are 
@@ -53,7 +53,7 @@ def statcast_outfield_directional_oaa(year: int, min_opp: Union[int, str] = "q")
 	data = sanitize_statcast_columns(data)
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_outfield_catch_prob(year: int, min_opp: Union[int, str] = "q") -> pd.DataFrame:
 	"""
 	Retrieves aggregated data for outfielder performance on fielding attempt types, binned into five star categories, 
@@ -70,7 +70,7 @@ def statcast_outfield_catch_prob(year: int, min_opp: Union[int, str] = "q") -> p
 	data = sanitize_statcast_columns(data)
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_outfielder_jump(year: int, min_att: Union[int, str] = "q") -> pd.DataFrame:
 	"""
 	Retrieves data on outfielder's jump to the ball for the given year and number of attempts. Jump is calculated 
@@ -87,7 +87,7 @@ def statcast_outfielder_jump(year: int, min_att: Union[int, str] = "q") -> pd.Da
 	data = sanitize_statcast_columns(data)
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_catcher_poptime(year: int, min_2b_att: int = 5, min_3b_att: int = 0) -> pd.DataFrame:
 	"""
 	Retrieves pop time data for catchers given year and minimum stolen base attempts for second and third base. 
@@ -105,7 +105,7 @@ def statcast_catcher_poptime(year: int, min_2b_att: int = 5, min_3b_att: int = 0
 	data = pd.read_csv(io.StringIO(res.decode('utf-8')))
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_catcher_framing(year: int, min_called_p: Union[int, str] = "q") -> pd.DataFrame:
 	"""
 	Retrieves the catcher's framing results for the given year and minimum called pitches. It uses eight zones around 

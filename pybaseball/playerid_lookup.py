@@ -9,7 +9,7 @@ from typing import List, Tuple, Iterable
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 
 url = "https://github.com/chadwickbureau/register/archive/refs/heads/master.zip"
 PEOPLE_FILE_PATTERN = re.compile("/people.+csv$")
@@ -17,8 +17,8 @@ PEOPLE_FILE_PATTERN = re.compile("/people.+csv$")
 _client = None
 
 
-def get_register_file():
-    return os.path.join(cache.config.cache_directory, 'chadwick-register.csv')
+# def get_register_file():
+#     return os.path.join(cache.config.cache_directory, 'chadwick-register.csv')
 
 
 def _extract_people_files(zip_archive: zipfile.ZipFile) -> Iterable[zipfile.ZipInfo]:
@@ -39,13 +39,13 @@ def _extract_people_table(zip_archive: zipfile.ZipFile) -> pd.DataFrame:
     return pd.concat(dfs, axis=0)
 
 
-@cache.df_cache()
+# @cache.df_cache
 def chadwick_register(save: bool = False) -> pd.DataFrame:
     ''' Get the Chadwick register Database '''
 
-    if os.path.exists(get_register_file()):
-        table = pd.read_csv(get_register_file())
-        return table
+    # if os.path.exists(get_register_file()):
+    #     table = pd.read_csv(get_register_file())
+    #     return table
 
     print('Gathering player lookup table. This may take a moment.')
     s = requests.get(url).content

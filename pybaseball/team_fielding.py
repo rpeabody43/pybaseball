@@ -3,7 +3,7 @@ from typing import List, Optional
 import pandas as pd
 from bs4 import BeautifulSoup, Comment
 
-from . import cache
+# from . import cache
 from .datahelpers import postprocessing
 from .datasources.fangraphs import fg_team_fielding_data
 from .datasources.bref import BRefSession
@@ -14,7 +14,7 @@ session = BRefSession()
 team_fielding = fg_team_fielding_data
 
 
-@cache.df_cache()
+# @cache.df_cache
 def team_fielding_bref(team: str, start_season: int, end_season: Optional[int]=None) -> pd.DataFrame:
     """
     Get season-level Fielding Statistics for Specific Team (from Baseball-Reference)

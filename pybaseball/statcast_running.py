@@ -4,10 +4,10 @@ from typing import Optional, Union
 import pandas as pd
 import requests
 
-from . import cache
+# from . import cache
 from .utils import sanitize_statcast_columns
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_sprint_speed(year: int, min_opp: int = 10) -> pd.DataFrame:
 	"""
 	Returns each player's sprint speed for the given year and minimum number of opportunities. Sprint speed is 
@@ -26,7 +26,7 @@ def statcast_sprint_speed(year: int, min_opp: int = 10) -> pd.DataFrame:
 	data = sanitize_statcast_columns(data)
 	return data
 
-@cache.df_cache()
+# @cache.df_cache
 def statcast_running_splits(year: int, min_opp: int = 5, raw_splits: bool = True) -> pd.DataFrame:
 	"""
 	Returns each player's 90 feet sprint splits at five foot intervals for the given year and minimum number of opportunities.
