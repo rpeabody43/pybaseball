@@ -1,5 +1,8 @@
+### Modifications made for AWS Lambda
+- Removed caching functions
+- Removed unnecessary dependencies for my purposes (pyarrow, matplotlib, scipy)
+
 # pybaseball
-(Forked for use with AWS Lambda)
 
 Baseball data scraping and analysis tools in python
 
